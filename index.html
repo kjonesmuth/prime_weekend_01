@@ -13,8 +13,42 @@
   
   <body> 
 
+    <table id="stats">
+      <tr>
+        <th>Name</th>
+        <th>STR</th>
+        <th>DEX</th>
+        <th>CON</th>
+        <th>WIS</th>
+        <th>INT</th>
+        <th>CHAR</th>
+        <th>Class (Optional)</th>
+      </tr>
+    </table>
+
+    <form>
+      <label for="creatureName">Name: </label>
+        <input type="text" name="name" id="ccc"><br>
+      <label for="str">Strength (STR): </label>
+        <input type="text" name="strength" id="str"><br>
+      <label for="dex">Dexterity (DEX): </label>
+        <input type="text" name="dexterity" id="dex"><br>
+      <label for="con">Constitution (CON): </label>
+        <input type="text" name="constitution" id="con"><br>
+      <label for="wis">Wisdom (WIS): </label>
+        <input type="text" name="wisdom" id="wis" ><br>
+      <label for="int">Intelligence (INT): </label>
+        <input type="text" name="intelligence" id="int"><br>
+      <label for="char">Charisma (CHAR): </label>
+        <input type="text" name="charisma" id="char"><br>
+      <label for="playerClass">Player Class (Optional): </label>
+        <input type="text" name="playerClass" id="playerClass" ><br>
+      <input type="button" value="Add Player/Monster to Records" id="addMonster">
+    </form>
+
     <!-- This is where to pull in javascript-->
     <script src="app.js"></script>
+
   </body>
 
 
