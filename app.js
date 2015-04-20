@@ -1,3 +1,35 @@
+var listOfMonsters = [];
+
+function addMonsterData(){
+	var creature;
+	if (document.getElementById('playerClass').value) {
+		creature = new Player(
+			document.getElementById('creatureName').value,
+			document.getElementById('str').value,
+			document.getElementById('dex').value, 
+			document.getElementById('con').value,
+			document.getElementById('wis').value,
+			document.getElementById('int').value,
+			document.getElementById('char').value,
+			document.getElementById('playerClass').value);
+	} else {
+		creature = new Monster(
+			document.getElementById('creatureName').value,
+			document.getElementById('str').value,
+			document.getElementById('dex').value, 
+			document.getElementById('con').value,
+			document.getElementById('wis').value,
+			document.getElementById('int').value,
+			document.getElementById('char').value);
+
+	}
+	console.log(creature);
+	listOfMonsters.push(creature);
+	console.log(listOfMonsters);
+	addTableRow(creature);
+	blankInputs();
+}
+
 function Monster(name, strength, dexterity, constitution, wisdom, intelligence, charisma){
 	this.monsterName = name;
 	this.strength = strength;
@@ -9,8 +41,9 @@ function Monster(name, strength, dexterity, constitution, wisdom, intelligence, 
 }
 
 function Player(name, strength, dexterity, constitution, wisdom, intelligence, charisma, playerClass){
-	this.__proto__ = Monster;
 	this.playerClass = playerClass;
+	Monster.apply(this, [name, strength, dexterity, constitution, wisdom, intelligence, charisma]);
+
 }
 
 Monster.prototype.attack = function (){
@@ -41,7 +74,7 @@ function addTableRow(creature){
 	newRow.appendChild(addTableCell(creature.wisdom));
 	newRow.appendChild(addTableCell(creature.intelligence));
 	newRow.appendChild(addTableCell(creature.charisma))
-	if (creature.hasOwnProperty("playerClass")){
+	if (creature.playerClass){
 		newRow.appendChild(addTableCell(creature.playerClass));
 	} else {
 		newRow.appendChild(addTableCell(""));
@@ -51,26 +84,9 @@ function addTableRow(creature){
 	table.appendChild(newRow);
 }
 
-
-function addMonsterData(){
-	var creature;
-	var name = document.getElementById('ccc').value;
-	console.log(name);
-	//if (document.getElementById('playerClass').value == null) {
-		creature = new Monster(name, 
-			document.getElementById('str').value,
-			document.getElementById('dex').value, 
-			document.getElementById('con').value,
-			document.getElementById('wis').value,
-			document.getElementById('int').value,
-			document.getElementById('char').value);
-	/*} else {
-		creature = new Player(document.getElementbyId('name'), document.getElementbyId('str'), document.getElementbyId('dex'), document.getElementbyId('con'), document.getElementbyId('wis'), document.getElementbyId('int'), document.getElementbyId('char'));
-	*/
-	console.log(creature);
-	listOfMonsters.push(creature);
-	addTableRow(creature);
+function blankInputs(){
+	var inputs = document.getElementsByTagName("input");
+	for (var i=0; i<inputs.length-1; i++){
+		inputs[i].value = null;
+	}
 }
-
-var listOfMonsters = [];
-document.getElementById('addMonster').addEventListener('click', addMonsterData());

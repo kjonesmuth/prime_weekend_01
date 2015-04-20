@@ -28,7 +28,7 @@
 
     <form>
       <label for="creatureName">Name: </label>
-        <input type="text" name="name" id="ccc"><br>
+        <input type="text" name="name" id="creatureName"><br>
       <label for="str">Strength (STR): </label>
         <input type="text" name="strength" id="str"><br>
       <label for="dex">Dexterity (DEX): </label>
@@ -43,7 +43,7 @@
         <input type="text" name="charisma" id="char"><br>
       <label for="playerClass">Player Class (Optional): </label>
         <input type="text" name="playerClass" id="playerClass" ><br>
-      <input type="button" value="Add Player/Monster to Records" id="addMonster">
+      <input type="button" value="Add Player/Monster to Records" id="addMonster" onclick="addMonsterData()">
     </form>
 
     <!-- This is where to pull in javascript-->
