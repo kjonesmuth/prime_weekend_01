@@ -43,15 +43,25 @@ function Monster(name, strength, dexterity, constitution, wisdom, intelligence, 
 function Player(name, strength, dexterity, constitution, wisdom, intelligence, charisma, playerClass){
 	this.playerClass = playerClass;
 	Monster.apply(this, [name, strength, dexterity, constitution, wisdom, intelligence, charisma]);
-
 }
 
-Monster.prototype.attack = function (){
+Monster.prototype.attack = function(){
 	return (Math.floor(Math.random() * 20) + 1 + this.strength);
 }
 
 Player.prototype.attack = function(){
 	return (Math.floor(Math.random() * 20) + 1 + this.dexterity);
+}
+
+function addAttackButton(creature){
+	var cell = document.createElement("td");
+	var attackButton = document.createElement("input");
+	attackButton.id = "attackButton";
+	attackButton.value = creature.monsterName;
+	attackButton.type = "button";
+	attackButton.onclick = function(){console.log(creature.attack())};
+	cell.appendChild(attackButton);
+	return cell;
 }
 
 function addTableCell(value){
@@ -67,7 +77,7 @@ function addTableRow(creature){
 	var newRow = document.createElement("tr");
 
 	//call helper function which creates td objects, append to row
-	newRow.appendChild(addTableCell(creature.monsterName));
+	newRow.appendChild(addAttackButton(creature));
 	newRow.appendChild(addTableCell(creature.strength));
 	newRow.appendChild(addTableCell(creature.dexterity));
 	newRow.appendChild(addTableCell(creature.constitution));
@@ -87,6 +97,8 @@ function addTableRow(creature){
 function blankInputs(){
 	var inputs = document.getElementsByTagName("input");
 	for (var i=0; i<inputs.length-1; i++){
-		inputs[i].value = null;
+		if (inputs[i].id != "attackButton"){
+			inputs[i].value = null;
+		}
 	}
 }
