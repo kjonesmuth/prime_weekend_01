@@ -28,19 +28,19 @@
 
     <form>
       <label for="creatureName">Name: </label>
-        <input type="text" name="name" id="creatureName"><br>
-      <label for="str">Strength (STR): </label>
-        <input type="text" name="strength" id="str"><br>
-      <label for="dex">Dexterity (DEX): </label>
-        <input type="text" name="dexterity" id="dex"><br>
-      <label for="con">Constitution (CON): </label>
-        <input type="text" name="constitution" id="con"><br>
-      <label for="wis">Wisdom (WIS): </label>
-        <input type="text" name="wisdom" id="wis" ><br>
-      <label for="int">Intelligence (INT): </label>
-        <input type="text" name="intelligence" id="int"><br>
-      <label for="char">Charisma (CHAR): </label>
-        <input type="text" name="charisma" id="char"><br>
+        <input type="text" name="name" id="creatureName" required><br>
+      <label for="str">Strength: </label>
+        <input type="text" name="strength" id="str" required><br>
+      <label for="dex">Dexterity: </label>
+        <input type="text" name="dexterity" id="dex" required><br>
+      <label for="con">Constitution: </label>
+        <input type="text" name="constitution" id="con" required><br>
+      <label for="wis">Wisdom: </label>
+        <input type="text" name="wisdom" id="wis" required><br>
+      <label for="int">Intelligence: </label>
+        <input type="text" name="intelligence" id="int" required><br>
+      <label for="char">Charisma: </label>
+        <input type="text" name="charisma" id="char" required><br>
       <label for="playerClass">Player Class (Optional): </label>
         <input type="text" name="playerClass" id="playerClass" ><br>
       <input type="button" value="Add Player/Monster to Records" id="addMonster" onclick="addMonsterData()">

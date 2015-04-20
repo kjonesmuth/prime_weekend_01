@@ -2,6 +2,13 @@ var listOfMonsters = [];
 
 function addMonsterData(){
 	var creature;
+
+	for (var i =0; i<listOfMonsters.length; i++){
+		if (listOfMonsters[i].monsterName == document.getElementById('creatureName').value){
+			alert("Player/Monster already exists!");
+			return;
+		}
+	}
 	if (document.getElementById('playerClass').value) {
 		creature = new Player(
 			document.getElementById('creatureName').value,
@@ -53,15 +60,21 @@ Player.prototype.attack = function(){
 	return parseInt(this.dexterity) + (Math.floor(Math.random() * 20) + 1);
 }
 
+function creatureAttacks(givenName){
+	for (var i=0; i<listOfMonsters.length; i++){
+		if (listOfMonsters[i].monsterName == givenName){
+			alert(listOfMonsters[i].monsterName +" attacks for " +listOfMonsters[i].attack()+" damage!");
+		}
+	}
+}
+
 function addAttackButton(creature){
 	var cell = document.createElement("td");
 	var attackButton = document.createElement("input");
 	attackButton.id = "attackButton";
 	attackButton.value = creature.monsterName;
 	attackButton.type = "button";
-	attackButton.onclick = function(){
-		alert(creature.monsterName +" attacks for " +creature.attack()+" damage!");
-	};
+	attackButton.onclick = function(){creatureAttacks(creature.monsterName);};
 	cell.appendChild(attackButton);
 	return cell;
 }
