@@ -5,14 +5,15 @@
     <title>Prime Weekend Challenge 01: Dnd Stats Tracker</title>
     <meta name="description" content="DnD Stats Tracker">
     <meta name="author" content="Kaitlin Muth">
-    
-    <!-- This is where to hook up a CSS file -->
+
     <link rel="stylesheet" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
     
   </head>
   
   <body> 
-
+    <div id="content">
     <table id="stats">
       <tr>
         <th>Name</th>
@@ -26,29 +27,48 @@
       </tr>
     </table>
 
-    <form>
-      <label for="creatureName">Name: </label>
-        <input type="text" name="name" id="creatureName" required><br>
-      <label for="str">Strength: </label>
-        <input type="text" name="strength" id="str" required><br>
-      <label for="dex">Dexterity: </label>
-        <input type="text" name="dexterity" id="dex" required><br>
-      <label for="con">Constitution: </label>
-        <input type="text" name="constitution" id="con" required><br>
-      <label for="wis">Wisdom: </label>
-        <input type="text" name="wisdom" id="wis" required><br>
-      <label for="int">Intelligence: </label>
-        <input type="text" name="intelligence" id="int" required><br>
-      <label for="char">Charisma: </label>
-        <input type="text" name="charisma" id="char" required><br>
-      <label for="playerClass">Player Class (Optional): </label>
-        <input type="text" name="playerClass" id="playerClass" ><br>
-      <input type="button" value="Add Player/Monster to Records" id="addMonster" onclick="addMonsterData()">
-    </form>
+    <table id="entryForm">
+      <form>
+        <tr>
+          <td><label for="creatureName">Name: </label></td>
+          <td><input type="text" name="name" id="creatureName" required></td>
+        </tr>
+        <tr>
+          <td><label for="str">Strength: </label></td>
+          <td><input type="text" name="strength" id="str" required></td>
+        </tr>
+        <tr>
+          <td><label for="dex">Dexterity: </label></td>
+          <td><input type="text" name="dexterity" id="dex" required></td>
+        </tr>
+        <tr>
+          <td><label for="con">Constitution: </label></td>
+          <td><input type="text" name="constitution" id="con" required></td>
+        <tr>
+          <td><label for="wis">Wisdom: </label></td>
+          <td><input type="text" name="wisdom" id="wis" required></td>
+        </tr>
+        <tr>
+          <td><label for="int">Intelligence: </label></td>
+          <td><input type="text" name="intelligence" id="int" required></td>
+        </tr>
+        <tr>
+          <td><label for="char">Charisma: </label></td>
+          <td><input type="text" name="charisma" id="char" required></td>
+        </tr>
+        <tr>
+          <td><label for="playerClass">Player Class (Optional): </label></td>
+          <td><input type="text" name="playerClass" id="playerClass" ></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="Add Player/Monster to Records" id="addMonster" onclick="addMonsterData()"></td>
+        </tr>
+      </form>
+    </table>
 
     <!-- This is where to pull in javascript-->
     <script src="app.js"></script>
-
+  </div>
   </body>
 
 

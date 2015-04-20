@@ -1,0 +1,32 @@
+body{
+	font-family: 'ABeeZee', sans-serif;
+	background-color: #303030;
+	color: white;
+}
+
+th {
+	font-family: 'Rock Salt', cursive;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+#stats {
+	position: relative;
+	left: 25%;
+	width: 50%;
+	text-align: center;
+}
+
+#stats td {
+	font-size: 18px;
+}
+
+#stats input {
+	font-size: 32px;
+}
+
+#entryForm {
+	position: relative;
+	left: 33%;
+	width: 33%;
+}
