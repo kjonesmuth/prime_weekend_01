@@ -46,11 +46,11 @@ function Player(name, strength, dexterity, constitution, wisdom, intelligence, c
 }
 
 Monster.prototype.attack = function(){
-	return (Math.floor(Math.random() * 20) + 1 + this.strength);
+	return parseInt(this.strength) + (Math.floor(Math.random() * 20) + 1);
 }
 
 Player.prototype.attack = function(){
-	return (Math.floor(Math.random() * 20) + 1 + this.dexterity);
+	return parseInt(this.dexterity) + (Math.floor(Math.random() * 20) + 1);
 }
 
 function addAttackButton(creature){
@@ -59,7 +59,9 @@ function addAttackButton(creature){
 	attackButton.id = "attackButton";
 	attackButton.value = creature.monsterName;
 	attackButton.type = "button";
-	attackButton.onclick = function(){console.log(creature.attack())};
+	attackButton.onclick = function(){
+		alert(creature.monsterName +" attacks for " +creature.attack()+" damage!");
+	};
 	cell.appendChild(attackButton);
 	return cell;
 }
